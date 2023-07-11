@@ -59,9 +59,9 @@ export default function Home() {
         </div>
       </div>
       <div className="inner" >
-        <div className="grid md:grid-cols-[1fr_400px] md:mt-8 md:mb-40 items-stretch gap-10">
+        <div className="grid md:grid-cols-[1fr_400px] md:mt-8 md:mb-40 mb-20 items-stretch gap-10">
           <div className="grid grid-rows-[auto]">
-            <div className="text-gray-100 p-8 md:p-10">
+            <div className="text-gray-100 p-8 md:p-10 mt-8 md:mt-0">
               <div className="text-2xl mb-8">Experience</div>
               2021 - Present &middot; Tech Leader at Grin
               <br />
