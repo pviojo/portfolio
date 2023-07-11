@@ -62,7 +62,7 @@ export default function Home() {
         <div className="grid md:grid-cols-[1fr_400px] md:mt-8 md:mb-10 mb-20 items-stretch gap-10 text-gray-700 dark:text-gray-100">
           <div className="grid grid-rows-[auto]">
             <div className="p-8 md:p-10 mt-8 md:mt-0">
-              <div className="text-2xl mb-8 color-purple">Experience</div>
+              <div className="section-title">Experience</div>
               2021 - Present &middot; Tech Leader at Grin
               <br />
               <br />
@@ -94,51 +94,51 @@ export default function Home() {
           </div>
           <div className="grid grid-rows-[auto_1fr]">
             <div className="p-8 md:p-10">
-              <div className="text-2xl mb-8 color-purple">Skills</div>
+              <div className="section-title">Skills</div>
               <div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Operations Management
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Project Management
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Logisitic
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   IT Consultancy
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Software engineering
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Python
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   Javascript
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   React
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   PHP
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   MySQL
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   PostgreSQL
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   AWS
                 </div>
-                <div className="bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4">
+                <div className="tag">
                   GCP
                 </div>
               </div>
             </div>
             <div className="p-8 md:p-10 md:mt-8">
-              <div className="text-2xl mb-8 color-purple">Contact</div>
+              <div className="section-title">Contact</div>
               <div className='mb-4'>
                 <a
                   href="https://linkedin.com/in/pviojo"
