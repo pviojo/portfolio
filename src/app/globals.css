@@ -12,13 +12,18 @@
 html {
   background: #1d1d1f;
 }
-body {
-  max-width: 1400px;
+
+.inner {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .bg-gray {
-  background: #2a3647;
+  background: #27313f;
+}
+
+.border-sep{
+  
 }
 
 .bg-gray-2 {
@@ -26,5 +31,5 @@ body {
 }
 
 .bg-gray-3 {
-  background: #10151c;
+  background: #232a34;
 }
