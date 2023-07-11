@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 const ThemeButton = () => {
@@ -16,7 +17,7 @@ const ThemeButton = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
   if (!isClient) {
-    return <div style={{ height: 24 }} />
+    return <div style={{ height: 16 }}><FontAwesomeIcon icon={faSpinner} spin /></div>
   }
 
   return (

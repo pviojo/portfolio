@@ -1,4 +1,6 @@
 import "./globals.css";
+import pjson from '../../package.json';
+
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 
@@ -30,8 +32,9 @@ export default function RootLayout({
           subpixel-antialiased`}
       >
         <Providers>
-          <div className=''>
-            <div className="inner text-right p-3 pr-3 md:pr-10 md:relative absolute right-0">
+          <div className="bg-marked  p-3 px-3 md:px-10  right-0 left-0 flex justify-between">
+            <div className='text-xs'>v{pjson.version}</div>
+            <div>
               <ThemeButton />
             </div>
           </div>
