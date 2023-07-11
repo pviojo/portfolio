@@ -20,9 +20,9 @@ const ThemeButton = () => {
   }
 
   return (
-    <button
+    <div
       onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}
-      className='text-xs'
+      className='text-xs cursor-pointer'
     >
       <FontAwesomeIcon
         icon={theme == "dark" ? faSun : faMoon}
@@ -31,7 +31,7 @@ const ThemeButton = () => {
           color: theme == "dark" ? '#fc0' : '#999'
         }} />
       Switch to {theme == "dark" ? 'Light Mode' : 'Dark Mode'}
-    </button>
+    </div>
   )
 }
 
