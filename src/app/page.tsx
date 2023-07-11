@@ -85,7 +85,7 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-rows-[auto_1fr]">
-            <div className="bg-gray-2 text-gray-100 p-8 md:p-10">
+            <div className="text-gray-100 p-8 md:p-10">
               <div className="text-2xl mb-8">Skills</div>
               <div>
                 <div className="bg-gray p-2 text-sm rounded-lg inline-block mr-2 mb-4">
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-3 text-gray-100 p-8 md:p-10 md:mt-8">
+            <div className="text-gray-100 p-8 md:p-10 md:mt-8">
               <div className="text-2xl mb-8">Contact</div>
               <div className='mb-4'>
                 <a
@@ -140,7 +140,7 @@ export default function Home() {
                   rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 22 }} className='mr-3 align-middle' />
-                  <span>https://linkedin.com/in/pviojo</span>
+                  <span>LinkedIn</span>
                 </a>
               </div>
               <div>
