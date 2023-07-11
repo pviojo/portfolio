@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #1d1d1f;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bg-gray {
+  background: #2a3647;
+}
+
+.bg-gray-2 {
+  background: #1b232e;
+}
