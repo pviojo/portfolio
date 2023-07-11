@@ -51,12 +51,20 @@ export default function RootLayout({
           </div>
           {children}
           <div className="mb-5">
-            <div className="inner p-3 px-11 flex justify-between">
+            <div className="inner p-3 px-11 flex justify-between items-end">
               <div className='text-xs'>
                 <FontAwesomeIcon icon={faHeart}
                   className='mr-2 color-purple'
                 />
-                Made with Next.js, TypeScript and Tailwind CSS</div>
+                Made with Next.js, TypeScript and Tailwind CSS
+                <br />
+                <br />
+                Fork on
+                {' '}
+                <a className="underline" href="https://github.com/pviojo/portfolio" target='_blank' rel="noreferrer">
+                  GitHub
+                </a>
+              </div>
               <div className='text-xs'>v{pjson.version}</div>
             </div>
           </div>
