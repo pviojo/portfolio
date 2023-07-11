@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <div className="bg-gray text-gray-100 border-sep" >
         <div className="inner" >
-          <div className="grid md:grid-cols-[1fr_400px] items-end">
+          <div className="grid md:grid-cols-[1fr_400px] items-end h-screen md:h-auto">
             <div className="px-4 md:px-10 mt-8 mb-6 md:my-12 md:text-left text-center">
               <div className="font-light md:text-base text-base block mb-2  ">
                 Business, Technology and Operations
@@ -26,6 +26,14 @@ export default function Home() {
                   rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 32 }} />
+                </a>
+                <a
+                  href="mailto:pviojo@gmail.com"
+                  target="_blank"
+                  className="ml-6"
+                  rel="noreferrer"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: 32 }} />
                 </a>
                 <a
                   href="https://github.com/pviojo"
