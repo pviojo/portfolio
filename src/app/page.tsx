@@ -136,10 +136,10 @@ export default function Home() {
                 <a
                   href="https://linkedin.com/in/pviojo"
                   target="_blank"
-                  className="align-middle"
+                  className="align-middle text-sm"
                   rel="noreferrer"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 22 }} className='mr-4 align-middle' />
+                  <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 22 }} className='mr-3 align-middle' />
                   <span>https://linkedin.com/in/pviojo</span>
                 </a>
               </div>
@@ -147,9 +147,10 @@ export default function Home() {
                 <a
                   href="mailto:pviojo@gmail.com"
                   target="_blank"
+                  className="align-middle text-sm"
                   rel="noreferrer"
                 >
-                  <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: 22 }} className='mr-4 align-middle' />
+                  <FontAwesomeIcon icon={faEnvelope} style={{ fontSize: 22 }} className='mr-3 align-middle' />
                   <span>pviojo@gmail.com</span>
                 </a>
               </div>
