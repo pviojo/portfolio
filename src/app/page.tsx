@@ -47,7 +47,7 @@ export default function Home() {
             </div>
             <div className="md:block justify-items-end">
               <Image
-                src="/images/image.png"
+                src="/images/image-smooth.png"
                 alt=""
                 className='px-4 md:mt-6 mt-6'
                 width="800"
