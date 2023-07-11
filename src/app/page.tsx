@@ -10,11 +10,11 @@ export default function Home() {
         <div className="inner" >
           <div className="grid md:grid-cols-[1fr_400px] items-end">
             <div className="px-4 md:px-10 mt-8 mb-6 md:my-12 md:text-left text-center">
-              <div className="md:text-6xl text-4xl font-bold dark:text-white mb-4">
-                Pablo Viojo
-              </div>
-              <div className="font-light md:text-xl text-base block mb-4  ">
+              <div className="font-light md:text-base text-base block mb-2  ">
                 Business, Technology and Operations
+              </div>
+              <div className="md:text-6xl text-4xl font-bold dark:text-white mb-8 uppercase">
+                Pablo Viojo
               </div>
               <div className="font-light text-sm block mb-8">
                 Santiago, Chile (UTC-4)
@@ -53,7 +53,7 @@ export default function Home() {
       <div className="inner" >
         <div className="grid md:grid-cols-[1fr_400px] md:mt-8 md:mb-40 items-stretch">
           <div className="grid grid-rows-[auto]">
-            <div className="text-gray-100 p-10">
+            <div className="text-gray-100 p-8 md:p-10">
               <div className="text-2xl mb-8">Experience</div>
               2021 - Present &middot; Tech Leader at Grin
               <br />
@@ -85,7 +85,7 @@ export default function Home() {
             </div>
           </div>
           <div className="grid grid-rows-[auto_1fr]">
-            <div className="bg-gray-2 text-gray-100 p-10">
+            <div className="bg-gray-2 text-gray-100 p-8 md:p-10">
               <div className="text-2xl mb-8">Skills</div>
               <div>
                 <div className="bg-gray p-2 text-sm rounded-lg inline-block mr-2 mb-4">
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-3 text-gray-100 p-10 md:mt-8">
+            <div className="bg-gray-3 text-gray-100 p-8 md:p-10 md:mt-8">
               <div className="text-2xl mb-8">Contact</div>
               <div className='mb-4'>
                 <a

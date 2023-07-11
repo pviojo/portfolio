@@ -1,14 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-const typography = Noto_Sans({
+const typography = Roboto_Mono({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "700"],
+  weight: ["100", "300", "400", "700"],
 });
 
 export const metadata: Metadata = {
