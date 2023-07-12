@@ -34,14 +34,16 @@ export default function RootLayout({
         className={`${typography.className}
           subpixel-antialiased`}
       >
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-T9M1XZ8MZP"></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
+        {process?.env?.NODE_ENV === 'production' ?
+          <><Script src="https://www.googletagmanager.com/gtag/js?id=G-T9M1XZ8MZP"></Script>
+            <Script id="google-analytics">
+              {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-T9M1XZ8MZP');`}
-        </Script>
+            </Script>
+          </> : null}
         <Providers>
           <div className=" p-3 px-3 md:px-10 absolute top-0 right-0 left-0 flex justify-between">
             <div />
