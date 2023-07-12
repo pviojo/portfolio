@@ -2,22 +2,25 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { IBM_Plex_Sans } from 'next/font/google';
+
+const typography = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 export default function Home() {
   return (
     <>
-      <div className="bg-marked dark:text-gray-100 text-gray-700" >
+      <div className={`bg-marked dark:text-gray-100 text-gray-700`} >
         <div className="inner" >
           <div className="grid md:grid-cols-[1fr_400px] items-end h-[100dvh] md:h-auto md:pt-8">
             <div className="px-4 md:px-10 mt-8 mb-6 md:my-12 md:text-left text-center">
               <div className="font-light md:text-base text-base block mb-2  ">
                 Business, Technology and Operations
               </div>
-              <div className="md:text-6xl text-4xl font-bold dark:text-white mb-8 uppercase tracking-wide">
+              <div className={`md:text-6xl text-4xl font-bold dark:text-white mb-8 uppercase tracking-wide ${typography.className}`}>
                 Pablo Viojo
-              </div>
-              <div className="font-light text-sm block mb-8">
-                Santiago, Chile (UTC-4)
               </div>
               <div>
                 <a
@@ -44,6 +47,10 @@ export default function Home() {
                   <FontAwesomeIcon icon={faGithub} style={{ fontSize: 32 }} />
                 </a>
               </div>
+              <div className="font-light text-sm block mt-4">
+                Santiago, Chile (UTC-4)
+              </div>
+
             </div>
             <div className="md:block justify-items-end">
               <Image

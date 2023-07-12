@@ -2,7 +2,7 @@ import "./globals.css";
 import pjson from '../../package.json';
 
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Roboto_Mono } from "next/font/google";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
