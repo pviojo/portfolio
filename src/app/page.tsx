@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { IBM_Plex_Sans } from 'next/font/google';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const typography = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -70,33 +71,43 @@ export default function Home() {
           <div className="grid grid-rows-[auto]">
             <div className="p-8 md:p-10 mt-8 md:mt-0">
               <div className="section-title">Experience</div>
-              2021 - Present &middot; Tech Leader at Grin
-              <br />
-              <br />
-              2017 - 2021 &middot; Former COO and CTO at Groupon Latam.
-              <br />
-              <br />
-              2015 - 2017 &middot; Cofounder at Latam Builders.
-              <br />
-              <br />
-              2013 - 2015 &middot; Former COO and cofounder at babytuto.com
-              <br />
-              <br />
-              2010 - 2023 &middot; Former COO, CTO and cofounder at Groupon Latam.
-              <br />
-              <br />
-              Experience in Operations Management focused on the design and control of
-              processes in the e-commerce industry developing and implementing
-              different KPIs. Having managed Groupon operations in Chile, Argentina,
-              Uruguay, Perú, Colombia, Panamá, Mexico and Puerto Rico and cofounded my
-              own e-commerce company (babytuto.com) I have a strong knowledge of the
-              Latinoamerica e-commerce reality.
-              <br />
-              <br />
-              Beside this, I&apos;m a software developer. primarily focused on UI/UX,
-              architecture and development. Advanced skills on Python, Javascript,
-              React, PHP, MySQL, PostgreSQL, etc.
-
+              <p className="p">
+                2021 - Present &middot; Tech Leader at Grin
+              </p>
+              <p className="p">
+                2017 - 2021 &middot; Former COO and CTO at Groupon Latam.
+              </p>
+              <p className="p">
+                2015 - 2017 &middot; Cofounder at Latam Builders.
+              </p>
+              <p className="p">
+                2013 - 2015 &middot; Former COO and cofounder at babytuto.com
+              </p>
+              <p className="p">
+                2010 - 2023 &middot; Former COO, CTO and cofounder at Groupon Latam.
+              </p>
+              <p className="p">
+                Experience in Operations Management focused on the design and control of
+                processes in the e-commerce industry developing and implementing
+                different KPIs. Having managed Groupon operations in Chile, Argentina,
+                Uruguay, Perú, Colombia, Panamá, Mexico and Puerto Rico and cofounded my
+                own e-commerce company (babytuto.com) I have a strong knowledge of the
+                Latinoamerica e-commerce reality.
+              </p>
+              <p className="p">
+                Beside this, I&apos;m a software developer. primarily focused on UI/UX,
+                architecture and development. Advanced skills on Python, Javascript,
+                React, PHP, MySQL, PostgreSQL, etc.
+              </p>
+              <div>
+                <a
+                  className="border border-gray-300 dark:border-gray-500 font-bold py-2 px-4 rounded inline-flex items-center"
+                  href="/files/Pablo Viojo - CV - 2023.pdf" target='_blank' rel="noreferrer"
+                >
+                  <FontAwesomeIcon icon={faDownload}
+                    className='mr-2' />
+                  Download CV</a>
+              </div>
             </div>
           </div>
           <div className="grid grid-rows-[auto_1fr]">

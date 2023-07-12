@@ -22,6 +22,9 @@
   .section-title{
     @apply text-2xl mb-8 color-purple;
   }
+  .p{
+    @apply mb-8;
+  }
 }
 
 
@@ -49,3 +52,4 @@
 .dark .color-purple{
   color:#a489e2;
 }
+
