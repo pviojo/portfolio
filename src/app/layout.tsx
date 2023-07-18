@@ -1,6 +1,5 @@
-import "./globals.css";
 import pjson from '../../package.json';
-
+import "./globals.css";
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Roboto_Mono } from "next/font/google";
 
@@ -31,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${typography.className}
+        className={`
           subpixel-antialiased`}
       >
         {process?.env?.NODE_ENV === 'production' ?

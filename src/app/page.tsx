@@ -1,14 +1,9 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { IBM_Plex_Sans } from 'next/font/google';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
-const typography = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
 
 export default function Home() {
   return (
@@ -20,7 +15,7 @@ export default function Home() {
               <div className="font-light md:text-base text-base block mb-2  ">
                 Business, Technology and Operations
               </div>
-              <div className={`md:text-6xl text-4xl font-bold dark:text-white mb-8 uppercase tracking-wide ${typography.className}`}>
+              <div className={`md:text-6xl text-4xl font-bold dark:text-white mb-8  tracking-wide bold-title`}>
                 Pablo Viojo
               </div>
               <div>

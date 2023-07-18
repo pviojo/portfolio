@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "../../public/fonts/SwedenSansBook.css";
-@import "../../public/fonts/SwedenSansBold.css";
-
 :root {
 }
 
@@ -14,7 +11,6 @@
 
 @layer base {
   body {
-    font-family: "SwedenSans", sans-serif;
     @apply dark:bg-gray-800 bg-white;
   }
   .bg-marked {
@@ -26,12 +22,14 @@
   .section-title {
     @apply text-2xl mb-8 color-purple;
   }
+  .page {
+    @apply p-10;
+  }
+  .page-title {
+    @apply text-4xl mb-8 color-purple;
+  }
   .p {
     @apply mb-8;
-  }
-  .bold-title {
-    font-family: "SwedenSans", sans-serif;
-    font-weight: 900;
   }
 }
 
@@ -57,4 +55,26 @@
 
 .dark .color-purple {
   color: #a489e2;
+}
+
+.border-gray {
+  @apply border-gray-300 dark:border-gray-500;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  @apply mb-4 gap-4;
+
+  input,
+  textarea {
+    @apply border rounded border-gray p-2;
+  }
+}
+.field-suffix {
+  grid-template-columns: 200px 1fr auto;
+}
+
+.button {
+  @apply border border-gray font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer;
 }
