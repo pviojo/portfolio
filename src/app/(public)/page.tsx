@@ -2,8 +2,17 @@ import PostsList from "@/components/PostsList";
 import {AUTHOR_ID} from "@/config";
 import * as postsService from "@/lib/database/posts";
 import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
-import {faDownload} from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarCheck,
+  faContactCard,
+  faEnvelope,
+} from "@fortawesome/free-regular-svg-icons";
+import {
+  faBlog,
+  faCog,
+  faDownload,
+  faFlask,
+} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
@@ -69,21 +78,41 @@ export default async function Home() {
         <div className='grid md:grid-cols-[1fr_400px] md:mt-8 md:mb-10 mb-20 items-stretch gap-10 text-gray-700 dark:text-gray-100'>
           <div className='grid grid-rows-[auto]'>
             <div className='p-8 md:p-10 mt-8 md:mt-0'>
-              <div className='section-title'>Experience</div>
-              <p className='p'>2021 - Present &middot; Tech Leader at Grin</p>
-              <p className='p'>
-                2017 - 2021 &middot; Former COO and CTO at Groupon Latam.
-              </p>
-              <p className='p'>
-                2015 - 2017 &middot; Cofounder at Latam Builders.
-              </p>
-              <p className='p'>
-                2013 - 2015 &middot; Former COO and cofounder at babytuto.com
-              </p>
-              <p className='p'>
-                2010 - 2023 &middot; Former COO, CTO and cofounder at Groupon
-                Latam.
-              </p>
+              <div className='section-title'>
+                <FontAwesomeIcon
+                  icon={faFlask}
+                  style={{fontSize: 18}}
+                  className='mr-2 align-middle -mt-1'
+                />
+                Experience
+              </div>
+              <div className='border-gray-200 dark:border-gray-600 border-b mb-8'>
+                {[
+                  [2021, 2023, "Tech Leader at Grin Scooters"],
+                  [2017, 2021, "Former COO and CTO at Groupon Latam"],
+                  [2015, 2017, "Cofounder at Latam Builders"],
+                  [2013, 2015, "Former COO and cofounder at babytuto.com"],
+                  [
+                    2010,
+                    2013,
+                    "Former COO, CTO and cofounder at Groupon Latam",
+                  ],
+                ].map(([start, end, title]) => (
+                  <p
+                    key={`${start}-${end}-${title}`}
+                    className='py-4 px-2 grid grid-cols-[20px_auto_1fr] gap-4 items-center'
+                  >
+                    <FontAwesomeIcon
+                      icon={faCalendarCheck}
+                      className='mr-3 align-middle ml-[2px] -mt-1'
+                    />
+                    <span className=''>
+                      {start} - {end}
+                    </span>
+                    <span>{title}</span>
+                  </p>
+                ))}
+              </div>
               <p className='p'>
                 Experience in Operations Management focused on the design and
                 control of processes in the e-commerce industry developing and
@@ -110,14 +139,28 @@ export default async function Home() {
                 </a>
               </div>
             </div>
-            <div className='p-8 md:p-10 md:mt-8'>
-              <div className='section-title'>Posts</div>
+            <div className='p-8 md:p-10 md:mt-0'>
+              <div className='section-title'>
+                <FontAwesomeIcon
+                  icon={faBlog}
+                  style={{fontSize: 18}}
+                  className='mr-2 align-middle -mt-2'
+                />
+                Posts
+              </div>
               <PostsList posts={posts} />
             </div>
           </div>
           <div className='grid grid-rows-[auto_1fr]'>
             <div className='p-8 md:p-10'>
-              <div className='section-title'>Skills</div>
+              <div className='section-title'>
+                <FontAwesomeIcon
+                  icon={faCog}
+                  style={{fontSize: 18}}
+                  className='mr-2 align-middle -mt-1'
+                />
+                Skills
+              </div>
               <div>
                 <div className='tag'>Operations Management</div>
                 <div className='tag'>Project Management</div>
@@ -134,9 +177,16 @@ export default async function Home() {
                 <div className='tag'>GCP</div>
               </div>
             </div>
-            <div className='p-8 md:p-10 md:mt-8'>
-              <div className='section-title'>Contact</div>
-              <div className='mb-4'>
+            <div className='p-8 md:p-10 md:mt-0'>
+              <div className='section-title'>
+                <FontAwesomeIcon
+                  icon={faContactCard}
+                  style={{fontSize: 18}}
+                  className='mr-2 align-middle -mt-1'
+                />
+                Contact
+              </div>
+              <div className='mb-4 ml-4'>
                 <a
                   href='https://linkedin.com/in/pviojo'
                   target='_blank'
@@ -151,7 +201,7 @@ export default async function Home() {
                   <span>LinkedIn</span>
                 </a>
               </div>
-              <div>
+              <div className='mb-4 ml-4'>
                 <a
                   href='mailto:pviojo@gmail.com'
                   target='_blank'
@@ -164,6 +214,21 @@ export default async function Home() {
                     className='mr-3 align-middle'
                   />
                   <span>pviojo@gmail.com</span>
+                </a>
+              </div>
+              <div>
+                <a
+                  href='https://calendly.com/pviojo/30min'
+                  target='_blank'
+                  className='align-middle text-sm rounded-full bg-blue-500 inline-block py-3 px-4 text-white shadow hover:bg-blue-700'
+                  rel='noreferrer'
+                >
+                  <FontAwesomeIcon
+                    icon={faCalendarCheck}
+                    style={{fontSize: 22}}
+                    className='mr-3 align-middle ml-[2px]'
+                  />
+                  <span>Schedule a 30min meeting with me</span>
                 </a>
               </div>
             </div>

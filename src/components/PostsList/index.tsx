@@ -16,7 +16,9 @@ export default function PostsList({posts}: {posts: Post[]}) {
           <div className='text-lg color-purple'>
             <Link href={`/posts/${post.id}/${post.slug}`}>
               <FontAwesomeIcon icon={faFileText} className='mr-2' />
-              <span className='text-lg color-purple'>{post.title}</span>
+              <span className='text-lg color-purple underline'>
+                {post.title}
+              </span>
             </Link>
           </div>
           <div className='text-xs ml-6 mb-1'>

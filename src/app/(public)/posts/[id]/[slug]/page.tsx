@@ -44,7 +44,7 @@ export default async function PostView({
               <ReactMarkdown>{post.content || ""}</ReactMarkdown>
             </div>
             {otherPosts?.length > 0 && (
-              <div className='py-8 md:py-10 md:mt-8'>
+              <div className='py-8 md:py-10 md:mt-0'>
                 <div className='section-title'>Other Posts</div>
                 <PostsList posts={otherPosts} />
               </div>
