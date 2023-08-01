@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../../public/fonts/SwedenSansBook.css";
+@import "../../public/fonts/SwedenSansBold.css";
+
 :root {
 }
 
@@ -11,6 +14,7 @@
 
 @layer base {
   body {
+    font-family: "SwedenSans", sans-serif;
     @apply dark:bg-gray-800 bg-white;
   }
   .bg-marked {
@@ -22,14 +26,12 @@
   .section-title {
     @apply text-2xl mb-8 color-purple;
   }
-  .page {
-    @apply p-10;
-  }
-  .page-title {
-    @apply text-4xl mb-8 color-purple;
-  }
   .p {
     @apply mb-8;
+  }
+  .bold-title {
+    font-family: "SwedenSans", sans-serif;
+    font-weight: 900;
   }
 }
 
@@ -57,24 +59,46 @@
   color: #a489e2;
 }
 
-.border-gray {
-  @apply border-gray-300 dark:border-gray-500;
-}
-
 .field {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  @apply mb-4 gap-4;
-
-  input,
-  textarea {
-    @apply border rounded border-gray p-2;
-  }
+  @apply mb-6 w-full;
+}
+.field input,
+.field textarea {
+  @apply border rounded border-gray-100 p-2;
 }
 .field-suffix {
   grid-template-columns: 200px 1fr auto;
 }
 
 .button {
-  @apply border border-gray font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer;
+  @apply bg-purple-500 hover:bg-purple-700 text-white font-normal py-2 px-4 rounded;
+}
+
+.button-sm {
+  @apply border-purple-500 border text-purple-500 hover:border-purple-700 hover:text-purple-700 
+  font-normal py-1 pb-0 px-2 rounded text-sm inline-block;
+}
+
+.post {
+  p {
+    @apply my-2;
+  }
+  code {
+    @apply my-8 text-sm border border-gray-300 block p-4 rounded;
+  }
+  ul {
+    @apply pl-4 list-disc;
+  }
+  ol {
+    @apply pl-4 list-decimal;
+  }
+  ol,
+  ul {
+    li {
+      @apply pl-4  pb-4;
+    }
+  }
+  hr {
+    @apply mb-4;
+  }
 }
