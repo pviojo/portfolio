@@ -39,7 +39,7 @@ export default function UserMenu() {
           onClick={() => signIn()}
           className="flex cursor-pointer items-center justify-between max-w-sm gap-2 text-sm text-gray-500 rounded-full grid-cl focus:outline-none"
         >
-          <UserCircleIcon className="w-6" />
+          <FontAwesomeIcon icon={faUser} className="w-6" />
           <span className="flex-initial">Entrar</span>
         </div>
       )}
