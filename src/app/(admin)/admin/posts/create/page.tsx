@@ -10,9 +10,6 @@ export default async function Admin() {
       <div className={`bg-marked shadow`}>
         <div className='inner'>
           <div className='py-10 pt-20'>
-            <div className='text-xl ml-1 mb-4'>
-              <Link href='/admin'>Admin</Link> &raquo;
-            </div>
             <div className='text-4xl font-bold'>Create post</div>
           </div>
         </div>
@@ -26,6 +23,10 @@ export default async function Admin() {
                 authorId: AUTHOR_ID,
               } as Post
             }
+            onSave={{
+              action: "redirect",
+              url: "/admin",
+            }}
           />
         </div>
       </div>

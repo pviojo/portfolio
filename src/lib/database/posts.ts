@@ -1,30 +1,39 @@
-import { PrismaClient, Prisma, Post } from '@prisma/client'
+import {PrismaClient, Prisma, Post} from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 export async function getAllPostForAuthor(authorId: number) {
   const posts = await prisma.post.findMany({
     where: {
-      authorId
+      authorId,
     },
     include: {
       author: true,
     },
     orderBy: {
-      id: 'desc',
+      id: "desc",
     },
-
-  })
+  });
 
   return posts;
 }
-
-export async function getPostById(id: number) {
+export async function getById(id: number) {
   const post = await prisma.post.findFirst({
     where: {
-      id
-    }
-  })
+      id,
+    },
+  });
+
+  return post as Post;
+}
+
+export async function getPublishedById(id: number) {
+  const post = await prisma.post.findFirst({
+    where: {
+      id,
+      published: true,
+    },
+  });
 
   return post as Post;
 }
@@ -32,12 +41,9 @@ export async function getPostById(id: number) {
 export async function createPost(data: Post) {
   const post = await prisma.post.create({
     data,
-  })
-  return post as Post
+  });
+  return post as Post;
 }
-
-
-
 
 export async function updatePost(data: Post) {
   const post = await prisma.post.update({
@@ -45,38 +51,47 @@ export async function updatePost(data: Post) {
       id: data.id,
     },
     data,
-  })
-  return post
+  });
+  return post;
 }
 
+export async function getBySlug(slug: string) {
+  const post = await prisma.post.findFirst({
+    where: {
+      slug,
+    },
+  });
 
+  return post as Post;
+}
 
 export async function getPublishedBySlug(slug: string) {
   const post = await prisma.post.findFirst({
     where: {
       slug,
-      published: true
-    }
-  })
+      published: true,
+    },
+  });
 
   return post as Post;
 }
 
-
-export async function getLatestPublishedPost(authorId: number, excludeSlugs: string[] = []) {
+export async function getLatestPublishedPost(
+  authorId: number,
+  excludeSlugs: string[] = []
+) {
   const posts = await prisma.post.findMany({
     where: {
       authorId,
       published: true,
       slug: {
-        notIn: excludeSlugs
-      }
+        notIn: excludeSlugs,
+      },
     },
     orderBy: {
-      id: 'desc',
+      id: "desc",
     },
-  })
+  });
 
   return posts as Post[];
 }
-

@@ -16,14 +16,18 @@ interface SaveStatus {
 
 interface Props {
   defaultPost: Post;
+  onSave: {
+    action: "redirect";
+    url: string;
+  };
 }
 
-export default function FormPost({defaultPost}: Props) {
+export default function FormPost({defaultPost, onSave}: Props) {
   let router = useRouter();
   let [status, setStatus] = useState<SaveStatus | null>(null);
   const {fields, updateFields} = useFormObject<Post>(defaultPost);
 
-  const onSave = async (data: FormData) => {
+  const save = async (data: FormData) => {
     setStatus({
       status: "saving",
       message: null,
@@ -47,9 +51,11 @@ export default function FormPost({defaultPost}: Props) {
           status: "success",
           message: "Post saved successfully",
         });
-        window.setTimeout(() => {
-          router.push("/admin");
-        }, 1000);
+        if (onSave?.action === "redirect") {
+          window.setTimeout(() => {
+            router.push(onSave.url);
+          }, 1000);
+        }
       } else {
         setStatus({
           status: "error",
@@ -115,7 +121,7 @@ export default function FormPost({defaultPost}: Props) {
               className='button'
               disabled={status?.status === "saving"}
               type='submit'
-              formAction={onSave}
+              formAction={save}
             >
               {status?.status === "saving" ? (
                 <FontAwesomeIcon icon={faSpinner} spin />

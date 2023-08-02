@@ -11,7 +11,7 @@ const handler = NextAuth({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        email: { label: "Email", type: "text", placeholder: "Email..." },
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
@@ -22,7 +22,7 @@ const handler = NextAuth({
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
         let user = null;
-        if (credentials && (credentials.username === 'pviojo' && credentials.password === process.env.ADMIN_PASSWORD)) {
+        if (credentials && (credentials.email === 'pviojo@gmail.com' && credentials.password === process.env.ADMIN_PASSWORD)) {
           user = {
             email: 'pviojo@gmail.com',
             name: "Pablo Viojo",
@@ -36,7 +36,13 @@ const handler = NextAuth({
         return null
       }
     })
-  ]
+  ], session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60,
+  },
+  pages: {
+    signIn: "/auth/login",
+  },
 })
 
 export { handler as GET, handler as POST }

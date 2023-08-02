@@ -1,4 +1,5 @@
 import {AUTHOR_ID} from "@/config";
+import {generateHash} from "@/helpers/posts";
 import {getAllPostForAuthor} from "@/lib/database/posts";
 import {faEdit, faFile} from "@fortawesome/free-regular-svg-icons";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
@@ -11,8 +12,8 @@ export default async function Admin() {
     <>
       <div className={`bg-marked  shadow`}>
         <div className='inner '>
-          <div className='py-10 pt-20 text-4xl font-bold color-purple'>
-            Admin
+          <div className='py-10 pt-20'>
+            <div className='text-4xl font-bold'>Admin</div>
           </div>
         </div>
       </div>
@@ -82,17 +83,20 @@ export default async function Admin() {
                         </Link>
                       </td>
                       <td className='px-6 py-4 w-auto text-right'>
-                        {post.published && (
-                          <Link
-                            href={`/posts/${post.id}/${post.slug}`}
-                            className='mr-4'
-                          >
-                            <div className='button-sm'>
-                              <FontAwesomeIcon icon={faFile} className='mr-2' />
-                              Ver
-                            </div>
-                          </Link>
-                        )}
+                        <Link
+                          href={`/posts/${post.id}/${post.slug}${
+                            !post.published
+                              ? `?hash=${generateHash(post.slug)}`
+                              : ""
+                          }`}
+                          className='mr-4'
+                        >
+                          <div className='button-sm'>
+                            <FontAwesomeIcon icon={faFile} className='mr-2' />
+                            Ver
+                          </div>
+                        </Link>
+
                         <Link href={`/admin/posts/edit/${post.id}`}>
                           <div className='button-sm'>
                             <FontAwesomeIcon icon={faEdit} className='mr-2' />

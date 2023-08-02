@@ -7,6 +7,7 @@ import {config} from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Providers from "../providers";
 import ThemeButton from "@/components/ThemeButton";
+import UserMenu from "@/components/Layout/UserMenu";
 import Script from "next/script";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
@@ -34,14 +35,18 @@ export default function AdminLayout({children}: {children: React.ReactNode}) {
           <div className=' p-3 px-3  absolute top-0 right-0 left-0'>
             <div className='inner md:px-0 px-2 flex justify-between'>
               <div>
-                <Link href='/'>Inicio</Link>
+                <Link href='/' className='mr-6'>
+                  Inicio
+                </Link>
+                <Link href='/admin'>Admin</Link>
               </div>
+              <UserMenu />
               <ThemeButton />
             </div>
           </div>
           {children}
-          <div className='mb-5'>
-            <div className='inner p-3 px-11 flex justify-between items-end'>
+          <div className='mb-5 mt-10'>
+            <div className='inner p-3 flex justify-between items-end'>
               <div className='text-xs'>
                 <FontAwesomeIcon icon={faHeart} className='mr-2 color-purple' />
                 Made with Next.js, TypeScript and Tailwind CSS

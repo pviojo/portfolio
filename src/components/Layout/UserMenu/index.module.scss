@@ -1,0 +1,12 @@
+.menu {
+  font-weight: 400;
+  display: grid;
+  justify-content: flex-end;
+  gap: var(--spacing2x);
+  text-align: right;
+  &.loggedin {
+    grid-template-columns: auto auto;
+  }
+  .userInfo {
+  }
+}
