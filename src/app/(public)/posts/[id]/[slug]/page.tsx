@@ -18,7 +18,7 @@ export default async function PostView({
   if (hash === generateHash(slug)) {
     post = await postsService.getById(parseInt(id, 10));
   } else {
-    const post = await postsService.getPublishedById(parseInt(id, 10));
+    post = await postsService.getPublishedById(parseInt(id, 10));
   }
   const otherPosts = await postsService.getLatestPublishedPost(AUTHOR_ID, [
     slug,
