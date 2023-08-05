@@ -9,7 +9,7 @@ import Providers from "../providers";
 import ThemeButton from "@/components/ThemeButton";
 import Script from "next/script";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import {faHeart, faHome} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 config.autoAddCss = false;
 
@@ -19,7 +19,10 @@ const typography = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pablo Viojo",
+  title: {
+    template: "%s | Pablo Viojo",
+    default: "Pablo Viojo",
+  },
   description: "Portfolio de Pablo Viojo",
 };
 
@@ -60,7 +63,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <div className=' p-3 px-3  absolute top-0 right-0 left-0'>
             <div className='inner md:px-10 px-2 flex justify-between'>
               <div>
-                <Link href='/'>Inicio</Link>
+                <Link href='/'>
+                  <FontAwesomeIcon icon={faHome} className='mr-2' />
+                  Inicio
+                </Link>
               </div>
               <ThemeButton />
             </div>

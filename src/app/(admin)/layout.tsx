@@ -10,7 +10,7 @@ import ThemeButton from "@/components/ThemeButton";
 import UserMenu from "@/components/Layout/UserMenu";
 import Script from "next/script";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHeart} from "@fortawesome/free-solid-svg-icons";
+import {faCog, faHeart, faHome} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 config.autoAddCss = false;
 
@@ -36,9 +36,13 @@ export default function AdminLayout({children}: {children: React.ReactNode}) {
             <div className='inner md:px-0 px-2 flex justify-between'>
               <div>
                 <Link href='/' className='mr-6'>
+                  <FontAwesomeIcon icon={faHome} className='mr-2' />
                   Inicio
                 </Link>
-                <Link href='/admin'>Admin</Link>
+                <Link href='/admin'>
+                  <FontAwesomeIcon icon={faCog} className='mr-2' />
+                  Admin
+                </Link>
               </div>
               <UserMenu />
               <ThemeButton />

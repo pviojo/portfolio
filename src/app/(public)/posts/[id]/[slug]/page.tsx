@@ -5,14 +5,14 @@ import dayjs from "dayjs";
 import ReactMarkdown from "react-markdown";
 import {Post} from "@prisma/client";
 import {generateHash} from "@/helpers/posts";
+import {Metadata, ResolvingMetadata} from "next";
 
-export default async function PostView({
-  params: {id, slug},
-  searchParams,
-}: {
+interface Props {
   params: {id: string; slug: string};
   searchParams?: {[key: string]: string | string[] | undefined};
-}) {
+}
+
+async function getPost({params: {id, slug}, searchParams}: Props) {
   const {hash} = searchParams || {};
   let post: Post | null = null;
   if (hash === generateHash(slug)) {
@@ -20,6 +20,28 @@ export default async function PostView({
   } else {
     post = await postsService.getPublishedById(parseInt(id, 10));
   }
+  return post;
+}
+export async function generateMetadata(
+  {params, searchParams}: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const post = await getPost({params, searchParams});
+
+  return {
+    title: post.title,
+  };
+}
+
+export default async function PostView({
+  params,
+  searchParams,
+}: {
+  params: {id: string; slug: string};
+  searchParams?: {[key: string]: string | string[] | undefined};
+}) {
+  const {slug} = params;
+  const post = await getPost({params, searchParams});
   const otherPosts = await postsService.getLatestPublishedPost(AUTHOR_ID, [
     slug,
   ]);
