@@ -9,15 +9,32 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import {
   faBlog,
+  faBriefcase,
   faCog,
   faDownload,
+  faExternalLink,
   faFlask,
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
   const posts = await postsService.getLatestPublishedPost(AUTHOR_ID);
+
+  const projects = [
+    {
+      name: "Tools",
+      description: "A small collection of tools. WIP",
+      url: "https://tools.pablo-viojo.com",
+    },
+    {
+      name: "Mathy",
+      description:
+        "A simple math game created to improve multiplication skills.",
+      url: "https://mathy.pablo-viojo.com/",
+    },
+  ];
   return (
     <>
       <div className={`bg-marked dark:text-gray-100 text-gray-700`}>
@@ -139,6 +156,37 @@ export default async function Home() {
                 </a>
               </div>
             </div>
+
+            <div className='p-8 md:p-10 md:mt-0'>
+              <div className='section-title'>
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  style={{fontSize: 18}}
+                  className='mr-2 align-middle -mt-2'
+                />
+                Projects
+              </div>
+              <div className='my-8 grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-8'>
+                {projects.map((project, index) => (
+                  <div key={index}>
+                    <div className='font-bold mb-4'>{project.name}</div>
+                    <div className='text-gray-500  mb-4 md:h-10 '>
+                      {project.description}
+                    </div>
+                    <div className='border border-gray-300 dark:border-gray-500 font-bold py-2 px-4 rounded inline-flex items-center'>
+                      <a href={project.url} rel='noreferrer' target='_blank'>
+                        <FontAwesomeIcon
+                          icon={faExternalLink}
+                          className='mr-2'
+                        />{" "}
+                        View project
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className='p-8 md:p-10 md:mt-0'>
               <div className='section-title'>
                 <FontAwesomeIcon

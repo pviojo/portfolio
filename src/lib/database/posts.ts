@@ -65,6 +65,20 @@ export async function getBySlug(slug: string) {
   return post as Post;
 }
 
+export async function getPublished(authorId: number) {
+  const posts = await prisma.post.findMany({
+    where: {
+      authorId,
+      published: true,
+    },
+    orderBy: {
+      id: "desc",
+    },
+  });
+
+  return posts as Post[];
+}
+
 export async function getPublishedBySlug(slug: string) {
   const post = await prisma.post.findFirst({
     where: {
