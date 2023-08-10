@@ -24,9 +24,6 @@ export default function PostsList({posts}: {posts: Post[]}) {
           <div className='text-xs ml-6 mb-1'>
             {dayjs(post.createdAt).format("YYYY-MM-DD")}
           </div>
-          <div className='ml-6 mt-4'>
-            {removeMarkdown(post.content || "").slice(0, 250)}...
-          </div>
         </li>
       ))}
     </ul>

@@ -83,6 +83,15 @@
   p {
     @apply my-2;
   }
+  a {
+    @apply underline;
+  }
+  blockquote {
+    @apply border-l-4 border-gray-300  p-2 pl-4 ml-4 italic my-8;
+    p {
+      @apply my-0;
+    }
+  }
   code {
     @apply my-8 text-sm border border-gray-300 block p-4 rounded;
   }
