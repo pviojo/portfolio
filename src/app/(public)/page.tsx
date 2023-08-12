@@ -80,11 +80,12 @@ export default async function Home() {
             </div>
             <div className='md:block justify-items-end'>
               <Image
+                priority
                 src='/images/image-smooth.png'
                 alt=''
                 className='px-4 md:mt-6 mt-6'
-                width='800'
-                height='720'
+                width={200}
+                height={165}
                 style={{width: "100%", height: "auto"}}
               />
             </div>
@@ -179,7 +180,7 @@ export default async function Home() {
                           icon={faExternalLink}
                           className='mr-2'
                         />{" "}
-                        View project
+                        View project {project.name}
                       </a>
                     </div>
                   </div>
