@@ -1,10 +1,10 @@
-# Pablo Viojo portfolio.
+# Pablo Viojo portfolio
 
 A Next.js (13) app used for https://pablo-viojo.com
 
 ## Getting Started
 
-As usual.
+As usual!
 
 Install dependencies
 
