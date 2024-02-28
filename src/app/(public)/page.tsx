@@ -119,16 +119,15 @@ export default async function Home() {
                 ].map(([start, end, title]) => (
                   <p
                     key={`${start}-${end}-${title}`}
-                    className='py-4 px-2 grid grid-cols-[20px_auto_1fr] gap-4 items-center'
+                    className='py-4 px-2 grid sm:grid-cols-[170px_1fr] grid-cols-1 sm:gap-4  gap-2 items-center'
                   >
-                    <FontAwesomeIcon
-                      icon={faCalendarCheck}
-                      className='mr-3 align-middle ml-[2px] -mt-1'
-                    />
-                    <span className=''>
-                      {start}
-                      {end ? ` - ${end}` : " - Current"}
-                    </span>
+                    <div className='flex gap-4 items-center'>
+                      <FontAwesomeIcon icon={faCalendarCheck} className='' />
+                      <span className='mt-[5px]'>
+                        {start}
+                        {end ? ` - ${end}` : " - Current"}
+                      </span>
+                    </div>
                     <span>{title}</span>
                   </p>
                 ))}
