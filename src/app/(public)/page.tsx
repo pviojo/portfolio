@@ -148,7 +148,7 @@ export default async function Home() {
               <div>
                 <a
                   className='border border-gray-300 dark:border-gray-500 font-bold py-2 px-4 rounded inline-flex items-center'
-                  href='/files/Pablo Viojo - CV - 2023.pdf'
+                  href='/files/Pablo Viojo - CV - 2024.pdf'
                   target='_blank'
                   rel='noreferrer'
                 >
