@@ -126,7 +126,8 @@ export default async function Home() {
                       className='mr-3 align-middle ml-[2px] -mt-1'
                     />
                     <span className=''>
-                      {start}{end ? ` - ${end}`: ' - Current'}
+                      {start}
+                      {end ? ` - ${end}` : " - Current"}
                     </span>
                     <span>{title}</span>
                   </p>
@@ -236,11 +237,11 @@ export default async function Home() {
                 />
                 Contact
               </div>
-              <div className='mb-4 ml-4'>
+              <div className='mb-4 '>
                 <a
                   href='https://linkedin.com/in/pviojo'
                   target='_blank'
-                  className='align-middle text-sm'
+                  className='align-middle text-sm flex items-center'
                   rel='noreferrer'
                 >
                   <FontAwesomeIcon
@@ -251,11 +252,11 @@ export default async function Home() {
                   <span>LinkedIn</span>
                 </a>
               </div>
-              <div className='mb-4 ml-4'>
+              <div className='mb-4'>
                 <a
                   href='mailto:pviojo@gmail.com'
                   target='_blank'
-                  className='align-middle text-sm'
+                  className='align-middle text-sm flex items-center'
                   rel='noreferrer'
                 >
                   <FontAwesomeIcon
@@ -270,15 +271,14 @@ export default async function Home() {
                 <a
                   href='https://calendly.com/pviojo/30min'
                   target='_blank'
-                  className='align-middle text-sm rounded-full bg-blue-500 inline-block py-3 px-4 text-white shadow hover:bg-blue-700'
+                  className='mt-8  justify-center gap-2 flex items-center text-sm rounded-full bg-blue-500  py-3 px-4 text-white shadow hover:bg-blue-700'
                   rel='noreferrer'
                 >
                   <FontAwesomeIcon
                     icon={faCalendarCheck}
-                    style={{fontSize: 22}}
-                    className='mr-3 align-middle ml-[2px]'
+                    style={{fontSize: 16, marginTop: -2}}
                   />
-                  <span>Schedule a 30min meeting with me</span>
+                  <div>Schedule a 30min meeting with me</div>
                 </a>
               </div>
             </div>
