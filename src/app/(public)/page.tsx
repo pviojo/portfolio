@@ -116,10 +116,11 @@ export default async function Home() {
                     2013,
                     "Former COO, CTO and cofounder at Groupon Latam",
                   ],
-                ].map(([start, end, title]) => (
+                ].map(([start, end, title], i) => (
                   <p
                     key={`${start}-${end}-${title}`}
-                    className='py-4 px-2 grid sm:grid-cols-[170px_1fr] grid-cols-1 sm:gap-4  gap-2 items-center'
+                    className={`${i === 0 ? "font-semibold" : ""}
+                    py-4 px-2 grid sm:grid-cols-[170px_1fr] grid-cols-1 sm:gap-4  gap-2 items-center`}
                   >
                     <div className='flex gap-4 items-center'>
                       <FontAwesomeIcon icon={faCalendarCheck} className='' />
@@ -187,18 +188,6 @@ export default async function Home() {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className='p-8 md:p-10 md:mt-0'>
-              <div className='section-title'>
-                <FontAwesomeIcon
-                  icon={faBlog}
-                  style={{fontSize: 18}}
-                  className='mr-2 align-middle -mt-2'
-                />
-                Posts
-              </div>
-              <PostsList posts={posts} />
             </div>
           </div>
           <div className='grid grid-rows-[auto_1fr]'>
