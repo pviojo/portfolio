@@ -1,5 +1,5 @@
-import NextAuth, { User } from "next-auth"
-import CredentialsProvider from "next-auth/providers/credentials"
+import NextAuth, {User} from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 const handler = NextAuth({
   providers: [
@@ -11,8 +11,8 @@ const handler = NextAuth({
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "Email..." },
-        password: { label: "Password", type: "password" }
+        email: {label: 'Email', type: 'text', placeholder: 'Email...'},
+        password: {label: 'Password', type: 'password'},
       },
       async authorize(credentials) {
         // You need to provide your own logic here that takes the credentials
@@ -22,27 +22,32 @@ const handler = NextAuth({
         // You can also use the `req` object to obtain additional parameters
         // (i.e., the request IP address)
         let user = null;
-        if (credentials && (credentials.email === 'pviojo@gmail.com' && credentials.password === process.env.ADMIN_PASSWORD)) {
+        if (
+          credentials &&
+          credentials.email.toLowerCase() === 'pviojo@gmail.com' &&
+          credentials.password === process.env.ADMIN_PASSWORD
+        ) {
           user = {
             email: 'pviojo@gmail.com',
-            name: "Pablo Viojo",
-          } as User
+            name: 'Pablo Viojo',
+          } as User;
         }
         // If no error and we have user data, return it
         if (user) {
-          return user
+          return user;
         }
         // Return null if user data could not be retrieved
-        return null
-      }
-    })
-  ], session: {
-    strategy: "jwt",
+        return null;
+      },
+    }),
+  ],
+  session: {
+    strategy: 'jwt',
     maxAge: 30 * 24 * 60 * 60,
   },
   pages: {
-    signIn: "/auth/login",
+    signIn: '/auth/login',
   },
-})
+});
 
-export { handler as GET, handler as POST }
+export {handler as GET, handler as POST};
