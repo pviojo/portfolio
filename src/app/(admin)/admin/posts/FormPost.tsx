@@ -1,23 +1,23 @@
-"use client";
-import React, {useEffect, useRef, useState, useTransition} from "react";
-import {saveOrUpdatePost} from "./actions";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSave, faPlus, faSpinner} from "@fortawesome/free-solid-svg-icons";
-import slugify from "slugify";
-import {Post} from "@prisma/client";
-import {useRouter} from "next/navigation";
+'use client';
+import {useState} from 'react';
+import {saveOrUpdatePost} from './actions';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSave, faSpinner} from '@fortawesome/free-solid-svg-icons';
+import slugify from 'slugify';
+import {Post} from '@prisma/client';
+import {useRouter} from 'next/navigation';
 
-import {useFormObject} from "@/hooks/useFormObject";
+import {useFormObject} from '@/hooks/useFormObject';
 
 interface SaveStatus {
-  status: "saving" | "success" | "error";
+  status: 'saving' | 'success' | 'error';
   message?: string | null;
 }
 
 interface Props {
   defaultPost: Post;
   onSave: {
-    action: "redirect";
+    action: 'redirect';
     url: string;
   };
 }
@@ -29,7 +29,7 @@ export default function FormPost({defaultPost, onSave}: Props) {
 
   const save = async (data: FormData) => {
     setStatus({
-      status: "saving",
+      status: 'saving',
       message: null,
     });
     window.setTimeout(async () => {
@@ -37,8 +37,8 @@ export default function FormPost({defaultPost, onSave}: Props) {
 
       if (!post.title) {
         setStatus({
-          status: "error",
-          message: "Title is empty",
+          status: 'error',
+          message: 'Title is empty',
         });
         return;
       }
@@ -48,26 +48,27 @@ export default function FormPost({defaultPost, onSave}: Props) {
       const rsp = await saveOrUpdatePost(post);
       if (rsp) {
         setStatus({
-          status: "success",
-          message: "Post saved successfully",
+          status: 'success',
+          message: 'Post saved successfully',
         });
-        if (onSave?.action === "redirect") {
+        if (onSave?.action === 'redirect') {
           window.setTimeout(() => {
             router.push(onSave.url);
           }, 1000);
         }
       } else {
         setStatus({
-          status: "error",
-          message: "An error occurred while saving. Try again",
+          status: 'error',
+          message: 'An error occurred while saving. Try again',
         });
       }
     }, 1);
   };
 
   const generateSlug = (title: string) => {
-    const newSlug = slugify(title || "", {
+    const newSlug = slugify(title || '', {
       lower: true,
+      strict: true,
     });
     return newSlug;
   };
@@ -83,7 +84,7 @@ export default function FormPost({defaultPost, onSave}: Props) {
             className='w-full'
             placeholder='Post title...'
             value={fields?.title}
-            onChange={(e) => updateFields("title", e.target.value)}
+            onChange={(e) => updateFields('title', e.target.value)}
           />
         </div>
         <div className='field'>
@@ -91,10 +92,10 @@ export default function FormPost({defaultPost, onSave}: Props) {
             id='content'
             name='content'
             placeholder='Content...'
-            value={fields?.content || ""}
+            value={fields?.content || ''}
             className='resize-none w-full'
             rows={10}
-            onChange={(e) => updateFields("content", e.target.value)}
+            onChange={(e) => updateFields('content', e.target.value)}
           />
         </div>
         <div className='field'>
@@ -103,7 +104,7 @@ export default function FormPost({defaultPost, onSave}: Props) {
             name='published'
             type='checkbox'
             value=''
-            onChange={(e) => updateFields("published", e.target.checked)}
+            onChange={(e) => updateFields('published', e.target.checked)}
             checked={fields?.published}
             className='w-4 h-4 inline align-middle text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
           />
@@ -119,11 +120,11 @@ export default function FormPost({defaultPost, onSave}: Props) {
           <div className='flex gap-4 items-center'>
             <button
               className='button'
-              disabled={status?.status === "saving"}
+              disabled={status?.status === 'saving'}
               type='submit'
               formAction={save}
             >
-              {status?.status === "saving" ? (
+              {status?.status === 'saving' ? (
                 <FontAwesomeIcon icon={faSpinner} spin />
               ) : (
                 <>
@@ -132,10 +133,10 @@ export default function FormPost({defaultPost, onSave}: Props) {
                 </>
               )}
             </button>
-            {status?.status === "error" && (
+            {status?.status === 'error' && (
               <div className='text-red-500'>{status.message}</div>
             )}
-            {status?.status === "success" && (
+            {status?.status === 'success' && (
               <div className='text-emerald-600'>{status.message}</div>
             )}
           </div>
