@@ -1,8 +1,8 @@
-"use server";
+'use server';
 
-import {createPost, updatePost} from "@/lib/database/posts";
-import {revalidatePath} from "next/cache";
-import {Post} from "@prisma/client";
+import {createPost, updatePost} from '@/lib/database/posts';
+import {revalidatePath} from 'next/cache';
+import {Post} from '@prisma/client';
 
 export async function saveOrUpdatePost(post: Post) {
   if (post.id) {
@@ -13,7 +13,8 @@ export async function saveOrUpdatePost(post: Post) {
     }
     await createPost(post);
   }
-  revalidatePath("/posts");
-  revalidatePath("/");
+  revalidatePath('/posts');
+  revalidatePath('/admin');
+  revalidatePath('/');
   return true;
 }
