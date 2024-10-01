@@ -1,4 +1,4 @@
-import {PrismaClient, Prisma, Post} from "@prisma/client";
+import {PrismaClient, Post} from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -11,7 +11,7 @@ export async function getAllPostForAuthor(authorId: number) {
       author: true,
     },
     orderBy: {
-      id: "desc",
+      id: 'desc',
     },
   });
 
@@ -42,7 +42,7 @@ export async function createPost(data: Post) {
   const post = await prisma.post.create({
     data,
   });
-  return post as Post;
+  return post;
 }
 
 export async function updatePost(data: Post) {
@@ -72,11 +72,11 @@ export async function getPublished(authorId: number) {
       published: true,
     },
     orderBy: {
-      id: "desc",
+      id: 'desc',
     },
   });
 
-  return posts as Post[];
+  return posts;
 }
 
 export async function getPublishedBySlug(slug: string) {
@@ -103,9 +103,9 @@ export async function getLatestPublishedPost(
       },
     },
     orderBy: {
-      id: "desc",
+      id: 'desc',
     },
   });
 
-  return posts as Post[];
+  return posts;
 }

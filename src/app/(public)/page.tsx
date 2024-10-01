@@ -1,38 +1,31 @@
-import PostsList from "@/components/PostsList";
-import {AUTHOR_ID} from "@/config";
-import * as postsService from "@/lib/database/posts";
-import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {
   faCalendarCheck,
   faContactCard,
   faEnvelope,
-} from "@fortawesome/free-regular-svg-icons";
+} from '@fortawesome/free-regular-svg-icons';
 import {
-  faBlog,
   faBriefcase,
   faCog,
   faDownload,
   faExternalLink,
   faFlask,
-} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import Link from "next/link";
+} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 export default async function Home() {
-  const posts = await postsService.getLatestPublishedPost(AUTHOR_ID);
-
   const projects = [
     {
-      name: "Tools",
-      description: "A small collection of tools. WIP",
-      url: "https://tools.pablo-viojo.com",
+      name: 'Tools',
+      description: 'A small collection of tools. WIP',
+      url: 'https://tools.pablo-viojo.com',
     },
     {
-      name: "Mathy",
+      name: 'Mathy',
       description:
-        "A simple math game created to improve multiplication skills.",
-      url: "https://mathy.pablo-viojo.com/",
+        'A simple math game created to improve multiplication skills.',
+      url: 'https://mathy.pablo-viojo.com/',
     },
   ];
   return (
@@ -86,7 +79,7 @@ export default async function Home() {
                 className='px-4 md:mt-6 mt-6'
                 width={200}
                 height={165}
-                style={{width: "100%", height: "auto"}}
+                style={{width: '100%', height: 'auto'}}
               />
             </div>
           </div>
@@ -106,27 +99,27 @@ export default async function Home() {
               </div>
               <div className='border-gray-200 dark:border-gray-600 border-b mb-8'>
                 {[
-                  [2023, null, "First Engineer at Teambit"],
-                  [2021, 2023, "Tech Leader at Grin Scooters"],
-                  [2017, 2021, "Former COO and CTO at Groupon Latam"],
-                  [2015, 2017, "Cofounder at Latam Builders"],
-                  [2013, 2015, "Former COO and cofounder at babytuto.com"],
+                  [2023, null, 'First Engineer at Teambit'],
+                  [2021, 2023, 'Tech Leader at Grin Scooters'],
+                  [2017, 2021, 'Former COO and CTO at Groupon Latam'],
+                  [2015, 2017, 'Cofounder at Latam Builders'],
+                  [2013, 2015, 'Former COO and cofounder at babytuto.com'],
                   [
                     2010,
                     2013,
-                    "Former COO, CTO and cofounder at Groupon Latam",
+                    'Former COO, CTO and cofounder at Groupon Latam',
                   ],
                 ].map(([start, end, title], i) => (
                   <p
                     key={`${start}-${end}-${title}`}
-                    className={`${i === 0 ? "font-semibold" : ""}
+                    className={`${i === 0 ? 'font-semibold' : ''}
                     py-4 px-2 grid sm:grid-cols-[170px_1fr] grid-cols-1 sm:gap-4  gap-2 items-center`}
                   >
                     <div className='flex gap-4 items-center'>
                       <FontAwesomeIcon icon={faCalendarCheck} className='' />
                       <span className='mt-[5px]'>
                         {start}
-                        {end ? ` - ${end}` : " - Current"}
+                        {end ? ` - ${end}` : ' - Current'}
                       </span>
                     </div>
                     <span>{title}</span>
@@ -171,7 +164,7 @@ export default async function Home() {
               </div>
               <div className='my-8 grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-8'>
                 {projects.map((project, index) => (
-                  <div key={index}>
+                  <div key={project.name}>
                     <div className='font-bold mb-4'>{project.name}</div>
                     <div className='text-gray-500  mb-4 md:h-10 '>
                       {project.description}
@@ -181,7 +174,7 @@ export default async function Home() {
                         <FontAwesomeIcon
                           icon={faExternalLink}
                           className='mr-2'
-                        />{" "}
+                        />{' '}
                         View project {project.name}
                       </a>
                     </div>
@@ -203,7 +196,7 @@ export default async function Home() {
               <div>
                 <div className='tag'>Operations Management</div>
                 <div className='tag'>Project Management</div>
-                <div className='tag'>Logisitic</div>
+                <div className='tag'>Logistic</div>
                 <div className='tag'>IT Consultancy</div>
                 <div className='tag'>Software engineering</div>
                 <div className='tag'>Python</div>

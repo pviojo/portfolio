@@ -22,7 +22,7 @@ interface Props {
   };
 }
 
-export default function FormPost({defaultPost, onSave}: Props) {
+export default function FormPost({defaultPost, onSave}: Readonly<Props>) {
   let router = useRouter();
   let [status, setStatus] = useState<SaveStatus | null>(null);
   const {fields, updateFields} = useFormObject<Post>(defaultPost);
@@ -92,7 +92,7 @@ export default function FormPost({defaultPost, onSave}: Props) {
             id='content'
             name='content'
             placeholder='Content...'
-            value={fields?.content || ''}
+            value={fields?.content ?? ''}
             className='resize-none w-full'
             rows={10}
             onChange={(e) => updateFields('content', e.target.value)}
