@@ -99,7 +99,7 @@ export default async function Home() {
               </div>
               <div className='border-gray-200 dark:border-gray-600 border-b mb-8'>
                 {[
-                  [2023, null, 'First Engineer at Teambit'],
+                  [2023, null, 'Cofounder at Teambit'],
                   [2021, 2023, 'Tech Leader at Grin Scooters'],
                   [2017, 2021, 'Former COO and CTO at Groupon Latam'],
                   [2015, 2017, 'Cofounder at Latam Builders'],
