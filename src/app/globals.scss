@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "../../public/fonts/SwedenSansBook.css";
-@import "../../public/fonts/SwedenSansBold.css";
+@import '../../public/fonts/SwedenSansBook.css';
+@import '../../public/fonts/SwedenSansBold.css';
 
 :root {
 }
@@ -14,11 +14,11 @@
 
 @layer base {
   body {
-    font-family: "SwedenSans", sans-serif;
+    font-family: 'SwedenSans', sans-serif;
     @apply dark:bg-gray-800 bg-white;
   }
   .bg-marked {
-    @apply dark:bg-[#3e4a5b] bg-[#f1f1f1];
+    @apply dark:bg-[#3e4a5b] bg-[#f8f4db];
   }
   .tag {
     @apply bg-marked p-2 text-sm rounded-lg inline-block mr-2 mb-4;
@@ -30,7 +30,7 @@
     @apply mb-8;
   }
   .bold-title {
-    font-family: "SwedenSans", sans-serif;
+    font-family: 'SwedenSans', sans-serif;
     font-weight: 900;
   }
 }
