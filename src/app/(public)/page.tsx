@@ -99,8 +99,9 @@ export default async function Home() {
               </div>
               <div className='border-gray-200 dark:border-gray-600 border-b mb-8'>
                 {[
-                  [2023, null, 'Cofounder at Teambit'],
-                  [2021, 2023, 'Tech Leader at Grin Scooters'],
+                  [2025, null, 'Tech Director at Antropo'],
+                  [2023, 2025, 'Cofounder and CTO at Teambit'],
+                  [2021, 2023, 'CTO at Grin Scooters'],
                   [2017, 2021, 'Former COO and CTO at Groupon Latam'],
                   [2015, 2017, 'Cofounder at Latam Builders'],
                   [2013, 2015, 'Former COO and cofounder at babytuto.com'],
