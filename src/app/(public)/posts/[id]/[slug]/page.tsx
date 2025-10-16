@@ -8,17 +8,19 @@ import {generateHash} from '@/helpers/posts';
 import {Metadata, ResolvingMetadata} from 'next';
 
 interface Props {
-  params: {id: string; slug: string};
-  searchParams?: {[key: string]: string | string[] | undefined};
+  params: Promise<{id: string; slug: string}>;
+  searchParams?: Promise<{[key: string]: string | string[] | undefined}>;
 }
 
-async function getPost({params: {id, slug}, searchParams}: Props) {
-  const {hash} = searchParams || {};
+async function getPost({params, searchParams}: Props) {
+  const {hash} = (await searchParams) || {};
   let post: Post | null = null;
-  if (hash === generateHash(slug)) {
-    post = await postsService.getById(parseInt(id, 10));
+  if (hash === generateHash((await params).slug)) {
+    post = await postsService.getById(Number.parseInt((await params).id, 10));
   } else {
-    post = await postsService.getPublishedById(parseInt(id, 10));
+    post = await postsService.getPublishedById(
+      Number.parseInt((await params).id, 10)
+    );
   }
   return post;
 }
@@ -37,11 +39,14 @@ export default async function PostView({
   params,
   searchParams,
 }: Readonly<{
-  params: {id: string; slug: string};
-  searchParams?: {[key: string]: string | string[] | undefined};
+  params: Promise<{id: string; slug: string}>;
+  searchParams?: Promise<{[key: string]: string | string[] | undefined}>;
 }>) {
-  const {slug} = params;
-  const post = await getPost({params, searchParams});
+  const {slug} = await params;
+  const post = await getPost({
+    params,
+    searchParams,
+  });
   const otherPosts: Post[] = await postsService.getLatestPublishedPost(
     AUTHOR_ID,
     [slug]

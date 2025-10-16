@@ -1,17 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-"use client";
+'use client';
 
-import {faTimes} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {signIn} from "next-auth/react";
-import {useState} from "react";
+import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {signIn} from 'next-auth/react';
+import {use, useState} from 'react';
 
-interface IProps {
-  searchParams?: {[key: string]: string | string[] | undefined};
-}
+type LoginPageProps = {
+  searchParams: Promise<{[key: string]: string | string[] | undefined}>;
+};
 
-function LoginPage({searchParams}: IProps) {
+function LoginPage(props: Readonly<LoginPageProps>) {
+  const searchParams = use(props.searchParams);
   const [email, setEmail] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
   const isFormComplete = !!email && !!password;
@@ -19,7 +20,7 @@ function LoginPage({searchParams}: IProps) {
     if (!isFormComplete) {
       return;
     }
-    await signIn("credentials", {
+    await signIn('credentials', {
       email,
       password,
       redirect: true,

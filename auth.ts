@@ -1,13 +1,13 @@
-import NextAuth from "next-auth"
-import Credentials from "next-auth/providers/credentials"
+import NextAuth from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const {handlers, signIn, signOut, auth} = NextAuth({
   providers: [
     Credentials({
       name: 'Credentials',
       credentials: {
-        email: { label: 'Email', type: 'text', placeholder: 'Email...' },
-        password: { label: 'Password', type: 'password' },
+        email: {label: 'Email', type: 'text', placeholder: 'Email...'},
+        password: {label: 'Password', type: 'password'},
       },
       async authorize(credentials) {
         if (
@@ -33,4 +33,4 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   pages: {
     signIn: '/auth/login',
   },
-})
+});
