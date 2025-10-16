@@ -31,8 +31,8 @@ export default async function Home() {
   return (
     <>
       <div className={`bg-marked dark:text-gray-100 text-gray-700`}>
-        <div className='inner'>
-          <div className='grid md:grid-cols-[1fr_400px] items-end h-[100dvh] md:h-auto md:pt-8'>
+        <div className='inner relative overflow-hidden'>
+          <div className='grid md:grid-cols-[1fr_400px] items-end  md:h-auto pt-8 pb-8 md:pb-0'>
             <div className='px-4 md:px-10 mt-8 mb-6 md:my-12 md:text-left text-center'>
               <div className='font-light md:text-base text-base block mb-2  '>
                 Business, Technology and Operations
@@ -71,15 +71,14 @@ export default async function Home() {
                 Santiago, Chile (UTC-4)
               </div>
             </div>
-            <div className='md:block justify-items-end'>
+            <div className='hidden md:block absolute bottom-[-10px] right-[50px] '>
               <Image
                 priority
-                src='/images/image-smooth.png'
+                src='/images/image.png'
                 alt=''
-                className='px-4 md:mt-6 mt-6'
-                width={200}
-                height={165}
-                style={{width: '100%', height: 'auto'}}
+                className='w-[300px]'
+                width={300}
+                height={300}
               />
             </div>
           </div>
