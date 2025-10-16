@@ -1,3 +1,7 @@
-export { default } from "next-auth/middleware"
+import {auth} from '@/auth';
 
-export const config = { matcher: ["/admin", "/admin/:path*"] }
+export default auth((req) => {
+  // req.auth contains the session information
+});
+
+export const config = {matcher: ['/admin', '/admin/:path*']};

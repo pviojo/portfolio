@@ -1,29 +1,29 @@
-import pjson from "../../../package.json";
-import "../globals.scss";
-import type {Metadata} from "next";
-import {IBM_Plex_Sans, Roboto_Mono} from "next/font/google";
+import pjson from '../../../package.json';
+import '../globals.scss';
+import type {Metadata} from 'next';
+import {Roboto_Mono} from 'next/font/google';
 
-import {config} from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import Providers from "../providers";
-import ThemeButton from "@/components/ThemeButton";
-import Script from "next/script";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHeart, faHome} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import {config} from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import Providers from '../providers';
+import ThemeButton from '@/components/ThemeButton';
+import Script from 'next/script';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faHeart, faHome} from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 config.autoAddCss = false;
 
 const typography = Roboto_Mono({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700"],
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700'],
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Pablo Viojo",
-    default: "Pablo Viojo",
+    template: '%s | Pablo Viojo',
+    default: 'Pablo Viojo',
   },
-  description: "Portfolio de Pablo Viojo",
+  description: 'Portfolio de Pablo Viojo',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -33,7 +33,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         className={`
           subpixel-antialiased`}
       >
-        {process?.env?.NODE_ENV === "production" ? (
+        {process?.env?.NODE_ENV === 'production' ? (
           <>
             <Script src='https://www.googletagmanager.com/gtag/js?id=G-T9M1XZ8MZP'></Script>
             <Script id='google-analytics'>
@@ -65,7 +65,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 Made with Next.js, TypeScript and Tailwind CSS
                 <br />
                 <br />
-                Fork on{" "}
+                Fork on{' '}
                 <a
                   className='underline'
                   href='https://github.com/pviojo/portfolio'

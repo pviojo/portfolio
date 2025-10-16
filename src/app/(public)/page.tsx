@@ -110,7 +110,7 @@ export default async function Home() {
                     'Former COO, CTO and cofounder at Groupon Latam',
                   ],
                 ].map(([start, end, title], i) => (
-                  <p
+                  <div
                     key={`${start}-${end}-${title}`}
                     className={`${i === 0 ? 'font-semibold' : ''}
                     py-4 px-2 grid sm:grid-cols-[170px_1fr] grid-cols-1 sm:gap-4  gap-2 items-center`}
@@ -123,7 +123,7 @@ export default async function Home() {
                       </span>
                     </div>
                     <span>{title}</span>
-                  </p>
+                  </div>
                 ))}
               </div>
               <p className='p'>
