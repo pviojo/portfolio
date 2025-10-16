@@ -1,11 +1,8 @@
-import {getAllPostForAuthor, getById} from "@/lib/database/posts";
-import Link from "next/link";
-import FormPost from "@/app/(admin)/admin/posts/FormPost";
-import {redirect} from "next/navigation";
-import {redirectTo} from "@/lib/redirectTo";
+import {getById} from '@/lib/database/posts';
+import FormPost from '@/app/(admin)/admin/posts/FormPost';
 
 export default async function PostEdit({params: {id}}: {params: {id: string}}) {
-  const post = await getById(parseInt(id, 10));
+  const post = await getById(Number.parseInt(id, 10));
   return (
     <>
       <div className={`bg-marked shadow`}>
@@ -20,8 +17,8 @@ export default async function PostEdit({params: {id}}: {params: {id: string}}) {
           <FormPost
             defaultPost={post}
             onSave={{
-              action: "redirect",
-              url: "/admin",
+              action: 'redirect',
+              url: '/admin',
             }}
           />
         </div>
