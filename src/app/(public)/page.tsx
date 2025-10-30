@@ -17,6 +17,11 @@ import Image from 'next/image';
 export default async function Home() {
   const projects = [
     {
+      name: 'Microevents for Python',
+      description: 'Tiny sync + async event signals for Python',
+      url: 'https://pviojo.github.io/microevents',
+    },
+    {
       name: 'Tools',
       description: 'A small collection of tools. WIP',
       url: 'https://tools.pablo-viojo.com',
